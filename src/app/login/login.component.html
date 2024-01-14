@@ -21,9 +21,9 @@
       <button type="submit" [disabled]="!myForm.valid">Invia</button>
   </form>
 
-  <p>
+  <p *ngIf="myGlobalService.loggedUser">
     <!--Interpoliamo il logged per stamparlo al Client-->
-    Benvenuto <strong>{{ myGlobalService.loggedUser.nome }} </strong>!!
+    Benvenuto <strong>{{ myGlobalService.loggedUser.nome }}</strong>!!
 </p>
   
   <hr>

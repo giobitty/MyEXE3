@@ -11,7 +11,7 @@ export class MyGlobalServiceService {
   //gli diamo gli argomenti da salvare
   loggedUser!: Logged;
   //saranno gli user che richiamiamo nei metodi del login
-  networkUser: any[] = [];
+  networkUsers: any[] = [];
   
   constructor(private httpClient : HttpClient) { }
 }

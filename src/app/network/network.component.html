@@ -1,4 +1,13 @@
 <h1>{{title}}</h1>
 
 
-<p>network works!</p>
+<!-- <li *ngFor="let obj of myObjects">{{obj.nome}} {{obj.cognome}} {{obj.eta}}</li> -->
+
+<div>
+
+    <ul *ngFor="let networkUser of myGlobalService.networkUsers">
+     <li> <img src="{{urlImages}}{{networkUser.immagine}}.png" alt="Immagini profilo" style="border-radius: 50%; height: 150px;"> {{networkUser.nome}} {{networkUser.cognome}} {{networkUser.motto}}</li>
+    </ul>
+  </div>
+   
+  

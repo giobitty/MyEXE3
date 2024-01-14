@@ -35,12 +35,12 @@ export class LoginComponent {
           console.log('Response: ' + JSON.stringify(response));
           //dobbiamo usare myGlobalService per fare le chiamate
           this.myGlobalService.loggedUser = response;
+          console.log(this.myGlobalService.loggedUser);
         if(this.myGlobalService.loggedUser.log === 'Si'){
           this.utenteGet();
         }else{
-          //rimanda una risposta errata con la window e elimina l array, io commento l alert perchè asincrono e cerco un modo per eliminare il tutto
+    //rimanda una risposta errata con la window e elimina l array, io commento l alert perchè asincrono e cerco un modo per eliminare il tutto
           this.networkUsers=[];
-          //window.alert('Nome o Password errati')
         }
       },
       error: (errore: any) => console.log('error: ' + errore),
@@ -52,13 +52,13 @@ export class LoginComponent {
       .subscribe({
         next: (response: any[]) => {
          //dobbiamo usare myGlobalService per prendere le chiamate
-          this.myGlobalService.networkUser = response;
+          this.myGlobalService.networkUsers = response;
           //sara' this.myGlobalService.networkUser
-          console.log(this.myGlobalService.networkUser); 
+          console.log(this.myGlobalService.networkUsers); 
+          
         },
         error: (errore: any) => console.log('error: ' + errore),
-        complete: () => console.log('complete')
+        complete: () => console.log('complete' )
       });
   }
-  
 }

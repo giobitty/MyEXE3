@@ -1,1 +1,12 @@
-<p>profile works!</p>
+<h1>{{ title }}</h1>
+
+<div *ngIf="myGlobalService.loggedUser.log === 'Si'">
+    <ng-container *ngFor="let user of myGlobalService.networkUsers">
+      <p *ngIf="user.id == myGlobalService.loggedUser.id">
+        <img src="{{urlImages}}{{user.immagine}}.png" alt="immagine profilo" style="border-radius: 50%; height: 223px;"><br>
+        <strong>Nome: </strong>{{user.nome}} <br>
+        <strong>Cognome: </strong>{{user.cognome}} <br>
+        <strong>Frase: </strong>{{user.frase}} <br>
+      </p>
+    </ng-container>
+</div>

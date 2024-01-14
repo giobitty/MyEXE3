@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MyGlobalServiceService } from '../my-global-service.service';
+
 
 @Component({
   selector: 'app-network',
@@ -7,5 +9,8 @@ import { Component } from '@angular/core';
 })
 export class NetworkComponent {
   title = 'Network component'
+  urlImages: string = 'https://ugobetori.it/_notes/api-test/angular/angular2/img/';
+  constructor(public myGlobalService: MyGlobalServiceService){
+  }
 
 }
